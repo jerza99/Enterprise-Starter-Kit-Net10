@@ -1,0 +1,24 @@
+# Configuración del botón de Sponsor/Financiamiento
+# Este archivo permite mostrar un botón "Sponsor" en tu repositorio de GitHub
+
+# Plataformas de financiamiento soportadas:
+# Descomenta y configura las que desees usar
+
+# github: # Hasta 4 nombres de usuario con GitHub Sponsors habilitado
+# patreon: # Un solo nombre de usuario de Patreon
+# open_collective: # Un solo nombre de usuario de Open Collective
+# ko_fi: # Un solo nombre de usuario de Ko-fi
+# tidelift: # Plataforma/paquete de Tidelift
+# community_bridge: # Nombre del proyecto de Community Bridge
+# liberapay: # Un solo nombre de usuario de Liberapay
+# issuehunt: # Un solo nombre de usuario de IssueHunt
+# otechie: # Un solo nombre de usuario de Otechie
+# lfx_crowdfunding: # Nombre del proyecto de LFX Crowdfunding
+
+# Enlaces personalizados (hasta 4 URLs)
+# Reemplaza con tus enlaces reales
+custom:
+  - 'https://gumroad.com/your-username' # Reemplaza con tu enlace de Gumroad para comprar el producto
+  # - 'https://buymeacoffee.com/your-username' # Opcional: Buy Me a Coffee
+  # - 'https://paypal.me/your-username' # Opcional: PayPal
+  # - 'https://patreon.com/your-username' # Opcional: Patreon
