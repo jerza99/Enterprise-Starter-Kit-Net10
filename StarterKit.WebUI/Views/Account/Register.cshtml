@@ -1,0 +1,86 @@
+@model StarterKit.Application.DTOs.RegisterUserDto
+@{
+    ViewData["Title"] = "Registro";
+}
+
+<div class="login-page-background">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="login-card">
+                    <h1 class="login-title text-center">Crear Cuenta</h1>
+                    <p class="login-subtitle text-center">Completa el formulario para registrarte</p>
+                    
+                    <form asp-action="Register" method="post">
+                        @Html.AntiForgeryToken()
+                        
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="FirstName" class="form-label fw-semibold mb-1">Nombre</label>
+                                <input asp-for="FirstName" class="form-control login-input" placeholder="Nombre" />
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="LastName" class="form-label fw-semibold mb-1">Apellido</label>
+                                <input asp-for="LastName" class="form-control login-input" placeholder="Apellido" />
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label fw-semibold mb-1">Correo electrónico</label>
+                            <input asp-for="Email" type="email" class="form-control login-input" placeholder="Correo electrónico" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="UserName" class="form-label fw-semibold mb-1">Usuario</label>
+                                <input asp-for="UserName" class="form-control login-input" placeholder="Usuario" />
+                                <span asp-validation-for="UserName" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="PhoneNumber" class="form-label fw-semibold mb-1">Teléfono (Opcional)</label>
+                                <input asp-for="PhoneNumber" type="tel" class="form-control login-input" placeholder="Teléfono" />
+                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Password" class="form-label fw-semibold mb-1">Contraseña</label>
+                                <input asp-for="Password" type="password" class="form-control login-input" placeholder="Contraseña" />
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="ConfirmPassword" class="form-label fw-semibold mb-1">Confirmar</label>
+                                <input asp-for="ConfirmPassword" type="password" class="form-control login-input" placeholder="Confirmar contraseña" />
+                                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="d-grid mb-4">
+                            <button type="submit" class="btn login-button">Registrarse</button>
+                        </div>
+                    </form>
+
+                    <div class="text-center">
+                        <p class="text-muted mb-0">¿Ya tienes cuenta? <a asp-action="Login" class="register-link">Inicia sesión aquí</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        document.body.classList.add('login-page');
+    </script>
+}

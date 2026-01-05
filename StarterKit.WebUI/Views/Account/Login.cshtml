@@ -1,0 +1,63 @@
+﻿@model StarterKit.Application.DTOs.LoginUserDto
+@{
+    ViewData["Title"] = "Iniciar Sesión";
+}
+
+<div class="login-page-background">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="login-card">
+                    <h1 class="login-title text-center">Bienvenido</h1>
+                    <p class="login-subtitle text-center">Ingresa a tu cuenta corporativa</p>
+                    
+                    @if (TempData["SuccessMessage"] != null)
+                    {
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            @TempData["SuccessMessage"]
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    }
+
+                    <form asp-action="Login" method="post">
+                        <input type="hidden" name="returnUrl" value="@ViewBag.ReturnUrl" />
+                        @Html.AntiForgeryToken()
+                        
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="mb-4">
+                            <label asp-for="EmailOrUserName" class="form-label fw-semibold mb-2">Correo electrónico</label>
+                            <input asp-for="EmailOrUserName" class="form-control login-input" placeholder="Correo electrónico" />
+                            <span asp-validation-for="EmailOrUserName" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="Password" class="form-label fw-semibold mb-2">Contraseña</label>
+                            <input asp-for="Password" type="password" class="form-control login-input" placeholder="Contraseña" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="form-check">
+                                <input asp-for="RememberMe" type="checkbox" class="form-check-input" id="rememberMe" />
+                                <label asp-for="RememberMe" class="form-check-label" for="rememberMe">Recordarme</label>
+                            </div>
+                        </div>
+
+                        <div class="d-grid mb-4">
+                            <button type="submit" class="btn login-button">Iniciar Sesión</button>
+                        </div>
+                    </form>
+
+                    <div class="text-center">
+                        <p class="text-muted mb-0">¿No tienes cuenta? <a asp-action="Register" class="register-link">Regístrate aquí</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

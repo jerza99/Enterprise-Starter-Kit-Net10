@@ -1,0 +1,55 @@
+@{
+    ViewData["Title"] = "Política de Privacidad";
+}
+
+<!-- Hero Section Compacto -->
+<header class="hero-section-compact text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-3">
+            Política de <span class="gradient-text">Privacidad</span>
+        </h1>
+        <p class="lead text-muted">
+            Última actualización: @DateTime.Now.ToString("MMMM dd, yyyy")
+        </p>
+    </div>
+</header>
+
+<!-- Contenido Legal -->
+<section class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-8">
+            <div class="privacy-content-card">
+                <!-- Contenido Legal -->
+                <div>
+                    <h4 class="privacy-section-title">1. Introducción</h4>
+                    <p class="text-muted mb-4">
+                        Bienvenido a StarterKit. Valoramos su privacidad y estamos comprometidos a proteger su información personal. 
+                        Esta política explica cómo recopilamos, usamos y divulgamos sus datos.
+                    </p>
+
+                    <h4 class="privacy-section-title">2. Recopilación de Información</h4>
+                    <p class="text-muted mb-4">
+                        Recopilamos información que usted nos proporciona directamente cuando registra una cuenta, actualiza su perfil o utiliza nuestros servicios premium.
+                    </p>
+
+                    <div class="privacy-alert-box">
+                        <div class="d-flex">
+                            <div class="privacy-icon-box me-3">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Seguridad de Datos</h6>
+                                <p class="text-muted mb-0 small">Utilizamos encriptación de grado militar (AES-256) para proteger su información sensible en reposo y en tránsito.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 class="privacy-section-title">3. Uso de la Información</h4>
+                    <p class="text-muted mb-0">
+                        Utilizamos su información para operar, mantener y mejorar nuestros servicios. No vendemos datos a terceros.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

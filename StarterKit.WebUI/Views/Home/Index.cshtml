@@ -1,0 +1,89 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<!-- Hero Section -->
+<header class="hero-section text-center text-lg-start">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-3 fw-bold mb-3">
+                    Enterprise <span class="gradient-text">Starter Kit</span>
+                </h1>
+                <p class="lead text-muted mb-4">
+                    La base más sólida para tus proyectos de .NET 10. Implementa Clean Architecture en minutos, no en semanas.
+                </p>
+                @if (!User.Identity?.IsAuthenticated == true)
+                {
+                    <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+                        <a asp-controller="Account" asp-action="Register" class="btn btn-gradient fw-bold shadow">Comenzar Ahora</a>
+                    </div>
+                }
+            </div>
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="p-5 text-center">
+                    <i class="bi bi-code-square display-1 gradient-text"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Features Section -->
+<section class="container py-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold h1">Potencia tu <span class="gradient-text">Desarrollo</span></h2>
+        <p class="text-muted">Desarrollado para programadores que buscan la excelencia y calidad profesional.</p>
+    </div>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card feature-card shadow-sm p-4 h-100">
+                <div class="icon-box mb-3">
+                    <i class="bi bi-shield-lock"></i>
+                </div>
+                <h3 class="fw-bold h5">Identity 10 Pro</h3>
+                <p class="text-muted small">
+                    Autenticación y roles configurados bajo estándares de seguridad militar.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card feature-card shadow-sm p-4 h-100">
+                <div class="icon-box mb-3 text-info">
+                    <i class="bi bi-diagram-3"></i>
+                </div>
+                <h3 class="fw-bold h5">Clean Architecture</h3>
+                <p class="text-muted small">
+                    Estructura desacoplada en 4 proyectos lista para escalar sin dolor.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card feature-card shadow-sm p-4 h-100">
+                <div class="icon-box mb-3 text-warning">
+                    <i class="bi bi-database-check"></i>
+                </div>
+                <h3 class="fw-bold h5">Entity Framework 10</h3>
+                <p class="text-muted small">
+                    Optimizado para SQL Server con migraciones automáticas y seguras.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+@if (!User.Identity?.IsAuthenticated == true)
+{
+    <div class="container my-5">
+        <div class="cta-box text-center shadow-lg">
+            <h2 class="fw-bold mb-3 display-5">¿Listo para vender en Gumroad?</h2>
+            <p class="mb-4 opacity-75">
+                Obtén la licencia hoy y comienza a construir tu propio imperio de software.
+            </p>
+            <a asp-controller="Account" asp-action="Register" class="btn btn-light text-primary btn-lg fw-bold rounded-pill px-5">
+                Adquirir Plantilla
+            </a>
+        </div>
+    </div>
+}
